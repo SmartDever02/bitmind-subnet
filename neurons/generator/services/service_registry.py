@@ -6,6 +6,7 @@ from .base_service import BaseGenerationService
 from .openai_service import OpenAIService
 from .openrouter_service import OpenRouterService
 from .stabilityai_service import StabilityAIService
+from .leonardo_service import LeonardoService
 from .local_service import LocalService
 
 
@@ -13,7 +14,8 @@ SERVICE_MAP = {
     "openai": OpenAIService,
     "openrouter": OpenRouterService,
     "local": LocalService,
-    "stabilityai": StabilityAIService
+    "stabilityai": StabilityAIService,
+    "leonardo": LeonardoService,
 }
 
 
@@ -28,6 +30,8 @@ class ServiceRegistry:
     Services:
       - openai: DALL-E 3 (requires OPENAI_API_KEY)
       - openrouter: Google Gemini via OpenRouter (requires OPEN_ROUTER_API_KEY)
+      - stabilityai: Stability AI models (requires STABILITY_API_KEY)
+      - leonardo: Leonardo.ai models (requires LEONARDO_API_KEY, note: does not support C2PA)
       - local: Local Stable Diffusion models
       - none: Disable this modality (no service loaded)
     
